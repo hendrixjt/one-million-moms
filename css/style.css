@@ -1,0 +1,326 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #777;
+    font-size: 1.5rem;
+}
+
+.navbar {
+    font-size: 1.5rem;
+    color: black;
+    margin-top: 2rem;
+}
+
+.header {
+    height: 92vh;
+    /* filter: drop-shadow(0 10px 5px rgba(0,0,0,0.2)); */
+    background-image: linear-gradient(
+        to right bottom, 
+        rgba(57, 162, 180, 0.65),
+        rgba(51, 222, 252, 0.65)), 
+        url(../img/baby-feet.png);
+    background-size: cover;
+    background-position: center;
+    clip-path: polygon(0 0, 100% 7vh, 100% 70%, 0 53vh);
+    position: relative;
+    margin-top: -3rem;
+    margin-bottom: -10rem;
+}
+.shadow2 {
+    height: 93vh;
+    content: "";
+    background: rgba(3, 3, 3, 0.5);
+    position: relative;
+    clip-path: polygon(0 0, 99.6% 7vh, 100% 70%, 0 53vh);
+    margin-bottom: -10rem;
+}
+
+.navbar-nav {
+    margin-right: 10rem;
+}
+
+a,
+a:link,
+a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* .logo-box {
+position: absolute;
+top: 40px;
+left: 40px;
+}
+
+.logo {
+height: 35px;
+backface-visibility: hidden;
+}
+.logo:hover {
+    animation: moveInRight 1s ease-out;
+    animation-delay: 0.15s;
+    backface-visibility: hidden;
+} */
+
+.text-box {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.heading-primary {
+    color: #fff;
+    text-transform: uppercase;
+    backface-visibility: hidden;
+    margin-bottom: 6rem;
+}
+
+.heading-primary-main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: .5rem;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    /* animation-delay: 3s;  */
+    /* animation-iteration-count: 3; */
+}
+
+.heading-primary-sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    animation: moveInRight 2s ease-out;
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-5rem);
+        /* transform: rotate(100deg); */
+        /* letter-spacing: -4rem; */
+    }
+    80% {
+        transform: translateX(1rem);
+
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+        
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(10rem);
+        /* letter-spacing: 0px; */
+    }
+    80% {
+        transform: translateX(-1rem)
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+        
+    }
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(2rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+        
+    }
+}
+
+.btn:link,
+.btn:visited {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all .1s;
+    position: relative;
+}
+
+.btn-white {
+    background-color: #fff;
+    color: #777;
+}
+
+.btn:hover {
+    transform: translateY(-.2rem);
+    box-shadow: 0 1rem 2rem rgba(0,0,0,.2);
+}
+
+.btn:active {
+    transform: translateY(-.1rem);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
+
+}
+
+.btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn-white::after {
+    background-color: #fff;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.2) scaleY(1.4);
+    opacity: 0;
+}
+
+.btn-animated {
+    animation: moveInBottom .5s ease-out .75s;
+    animation-fill-mode: backwards;
+}
+
+ /* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+        .heading-primary-main {
+            display: block;
+            font-size: 3rem;
+            font-weight: 400;
+            letter-spacing: .3rem;
+            animation-name: moveInLeft;
+            animation-duration: 1s;
+            animation-timing-function: ease-out;
+        }
+        
+        .heading-primary-sub {
+            display: block;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 1.25rem;
+            animation: moveInRight 2s ease-out;
+        }
+
+        .btn:link,
+        .btn:visited {
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 1rem 2rem;
+            display: inline-block;
+            border-radius: 10rem;
+            transition: all .1s;
+            position: relative;
+}
+}
+
+@media (min-width: 576px) {
+    .navbar {
+        font-size: 1.6rem;
+        margin-top: 2rem;
+        margin-right: -7rem;
+    }
+    .heading-primary-main {
+        display: block;
+        font-size: 3.5rem;
+        font-weight: 400;
+        letter-spacing: .5rem;
+        animation-name: moveInLeft;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+    }
+    
+    .heading-primary-sub {
+        display: block;
+        font-size: 1.5rem;
+        font-weight: 700;
+        letter-spacing: 1rem;
+        animation: moveInRight 2s ease-out;
+    }
+    .btn:link,
+    .btn:visited {
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1rem 2rem;
+        display: inline-block;
+        border-radius: 10rem;
+        transition: all .1s;
+        position: relative;
+}
+}
+
+ /* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .navbar {
+        font-size: 1.8rem;
+        margin-top: 2rem;
+        margin-right: -4rem;
+    }
+    .heading-primary-main {
+        display: block;
+        font-size: 5rem;
+        font-weight: 400;
+        letter-spacing: .3rem;
+        animation-name: moveInLeft;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+    }
+    
+    .heading-primary-sub {
+        display: block;
+        font-size: 2.5rem;
+        font-weight: 700;
+        letter-spacing: 1.25rem;
+        animation: moveInRight 2s ease-out;
+    }
+
+    .btn:link,
+    .btn:visited {
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1rem 2rem;
+        display: inline-block;
+        border-radius: 10rem;
+        transition: all .1s;
+        position: relative;
+}
+}
+
+ /* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+}
+
+ /* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}
